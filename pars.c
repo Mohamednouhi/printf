@@ -15,9 +15,8 @@ int pars(const char *form, cnvert_t f_lst[], va_list arg_lst)
 
 	for (a = 0; form[a] != '\0'; a++)
 	{
-		if (form[a] == '%') 
+		if (form[a] == '%')
 		{
-			
 			for (b = 0; f_lst[b].op != NULL; b++)
 			{
 				if (form[a + 1] == f_lst[b].op[0])

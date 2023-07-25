@@ -28,7 +28,7 @@ int _print_strng(va_list ls)
 	return (i);
 }
 /**
- * print_percent - to print a percent
+ * _print_percent - to print a percent
  * @ls: arguments list
  * Return: to return the amount of characters printed.
  */
