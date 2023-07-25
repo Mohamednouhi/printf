@@ -47,38 +47,19 @@ int _print_percent(__attribute__((unused))va_list ls)
 int _print_int(va_list ls)
 {
 	int num = va_arg(ls, int);
-	int count = 0;
-
-	if (num < 0)
+	char buffer[10];
+	/* Write the number to the buffer in decimal format.*/
+	for (int i = 9; i >= 0; i--)
 	{
-		_wr_char('-');
-		num = -num;
-		count++;
+		buffer[i] = (num % 10) + '0';
+		num /= 10;
 	}
 
-	if (num / 10)
-		count += _print_int_H(num / 10);
-
-	_wr_char(num % 10 + '0');
-	count++;
-
-	return (count);
-}
-
-/**
- * _print_int_H - Function to recursively print an integer
- * @num: the integer to print
- * Return: the number of characters printed
- */
-int _print_int_H(int num)
-{
-	int count = 0;
-
-	if (num / 10)
-		count += _print_int_H(num / 10);
-
-	_wr_char(num % 10 + '0');
-	count++;
-
-	return (count);
+	/*Write the buffer to stdout.*/
+	for (int i = 0; i < 10; i++)
+	{
+		write(1, &buffer[i], 1);
+	}
+	count += 10;
+	break;
 }
