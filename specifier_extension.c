@@ -49,7 +49,7 @@ int _print_int(va_list ls)
 	int num = va_arg(ls, int);
 	int count = 0;
 
-	if (num < 0) 
+	if (num < 0)
 	{
 		_wr_char('-');
 		num = -num;
@@ -62,7 +62,7 @@ int _print_int(va_list ls)
 	_wr_char(num % 10 + '0');
 	count++;
 
-	return count;
+	return (count);
 }
 
 /**
@@ -80,5 +80,5 @@ int _print_int_H(int num)
 	_wr_char(num % 10 + '0');
 	count++;
 
-	return count;
+	return (count);
 }
