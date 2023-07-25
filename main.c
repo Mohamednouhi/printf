@@ -19,11 +19,13 @@ int main(void)
 		printf("Lengths differ.\n");
 		fflush(stdout);
 		return (1);
+	}
 	len = _printf("%c", 'S');
 	len2 = printf("%c", 'S');
 	fflush(stdout);
-
-	else if (len != len2)
+	
+	
+	if (len != len2)
 	{
 		printf("Lengths differ.\n");
 		fflush(stdout);
@@ -34,7 +36,7 @@ int main(void)
 	len2 = printf("A char inside a sentence: %c. Did it work?\n", 'F');
 	fflush(stdout);
 	
-        else if (len != len2)
+	if (len != len2)
 	{
 		printf("Lengths differ.\n");
 		fflush(stdout);
@@ -60,6 +62,6 @@ int main(void)
 		fflush(stdout);
 		return (1);
 	}
-	}
-	return (0);
+
+	return (0);
 }

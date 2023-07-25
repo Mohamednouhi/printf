@@ -15,7 +15,7 @@ int _print_char(va_list ls)
  * @ls: arguments list
  * Return: to return the amount of character printed
  */
-int print_strng(va_list ls)
+int _print_strng(va_list ls)
 {
 	int i;
 	char *stri;

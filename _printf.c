@@ -6,12 +6,12 @@
  * @form: It contains all the desired characters
  * Return: amount of the characters printed
  */
-int _printf(const char *format, ...)
+int _printf(const char *form, ...)
 {
 
 	int _printed_chars;
 
-	cnver_t f_ls[] = {
+	cnvert_t f_ls[] = {
 		{"c", _print_char},
 		{"s", _print_strng},
 		{"%", _print_percent},
