@@ -27,6 +27,7 @@ int _print_strng(va_list ls)
 		_wr_char(stri[i]);
 	return (i);
 }
+
 /**
  * _print_percent - to print a percent
  * @ls: arguments list
@@ -36,4 +37,48 @@ int _print_percent(__attribute__((unused))va_list ls)
 {
 	_wr_char('%');
 	return (1);
+}
+
+/**
+ * _print_int - To print an integer
+ * @ls: arguments list
+ * Return: the number of characters printed
+ */
+int _print_int(va_list ls)
+{
+	int num = va_arg(ls, int);
+	int count = 0;
+
+	if (num < 0) 
+	{
+		_wr_char('-');
+		num = -num;
+		count++;
+	}
+
+	if (num / 10)
+		count += _print_int_H(num / 10);
+
+	_wr_char(num % 10 + '0');
+	count++;
+
+	return count;
+}
+
+/**
+ * _print_int_H - Function to recursively print an integer
+ * @num: the integer to print
+ * Return: the number of characters printed
+ */
+int _print_int_H(int num)
+{
+	int count = 0;
+
+	if (num / 10)
+		count += _print_int_H(num / 10);
+
+	_wr_char(num % 10 + '0');
+	count++;
+
+	return count;
 }
