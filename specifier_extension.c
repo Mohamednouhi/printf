@@ -38,28 +38,3 @@ int _print_percent(__attribute__((unused))va_list ls)
 	_wr_char('%');
 	return (1);
 }
-
-/**
- * _print_int - To print an integer
- * @ls: arguments list
- * Return: the number of characters printed
- */
-int _print_int(va_list ls)
-{
-	int num = va_arg(ls, int);
-	char buffer[10];
-	/* Write the number to the buffer in decimal format.*/
-	for (int i = 9; i >= 0; i--)
-	{
-		buffer[i] = (num % 10) + '0';
-		num /= 10;
-	}
-
-	/*Write the buffer to stdout.*/
-	for (int i = 0; i < 10; i++)
-	{
-		write(1, &buffer[i], 1);
-	}
-	count += 10;
-	break;
-}
