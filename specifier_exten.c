@@ -47,7 +47,7 @@ int _print_percent(__attribute__((unused))va_list ls)
 int _print_int(va_list ls)
 {
 	int n_len;
-	
+
 	n_len = _print_num(ls);
 	return (n_len);
 }
