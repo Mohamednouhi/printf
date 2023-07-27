@@ -12,7 +12,7 @@ int x;
 int y;
 unsigned int num;
 
-n  = va_arg(args, int);
+n  = va_arg(ls, int);
 x = 1;
 y = 0;
 
