@@ -51,3 +51,20 @@ int _print_int(va_list ls)
 	n_len = _print_num(ls);
 	return (n_len);
 }
+/**
+ * _print_bin - to print a binary form of number
+ * @args: arguments list
+ * Return: to return the amount of characters printed.
+ */
+int _print_bin(va_list args)
+{
+	unsigned int number = va_arg(args, unsigned int);
+	int i = 31;
+	
+	do
+	{
+		_wr_char((number & 1) + '0');
+		number >>= 1;
+	}
+		while (i--);
+}
