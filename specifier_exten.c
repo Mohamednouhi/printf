@@ -44,10 +44,10 @@ int _print_percent(__attribute__((unused))va_list ls)
  * @ls: arguments list
  * Return: to return the amount of characters printed.
  */
-int print_int(va_list ls)
+int _print_int(va_list ls)
 {
 	int n_len;
 	
-	n_len = print_num(ls);
+	n_len = _print_num(ls);
 	return (n_len);
 }
