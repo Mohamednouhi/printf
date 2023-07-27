@@ -26,4 +26,5 @@ int _print_strng(va_list);
 int _print_percent(va_list);
 int _print_int(va_list);
 int _print_num(va_list);
+int _print_bin(va_list);
 #endif
