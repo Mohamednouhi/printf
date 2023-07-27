@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * print_num - prints a num
+ * _print_num - prints a num
  * @ls: List of arguments
  * Return: The number of arguments printed
  */
-int print_num(va_list ls)
+int _print_num(va_list ls)
 {
 int n;
 int x;
@@ -18,7 +18,7 @@ y = 0;
 
 if (n < 0)
 {
-y += _write_char('-');
+y += _wr_char('-');
 num = n * -1;
 }
 else
@@ -29,7 +29,7 @@ x *= 10;
 
 for (; x != 0; )
 {
-y += _write_char('0' + num / x);
+y += _wr_char('0' + num / x);
 num %= x;
 x /= 10;
 }
