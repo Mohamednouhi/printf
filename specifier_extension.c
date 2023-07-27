@@ -38,3 +38,34 @@ int _print_percent(__attribute__((unused))va_list ls)
 	_wr_char('%');
 	return (1);
 }
+/**
+ * _print_int - to print an integer
+ * @ls: arguments list
+ * Return: to return the amount of characters printed.
+ */
+
+void _print_int(va_list ls) 
+{
+	int number = va_arg(ls, int);
+	char buffer[10];
+
+	/*Check if the number is negative.*/
+	if (number < 0)
+	{
+		_ wr_char('-');
+		number = -number;
+	}
+
+	/* Write the number to the buffer in decimal format.*/
+	for (int i = 9; i >= 0; i--)
+	{
+		buffer[i] = (number % 10) + '0';
+		number /= 10;
+	}
+
+	/* Write the buffer to stdout.*/
+	for (int i = 0; i < 10; i++)
+	{
+		_wr_char(buffer[i]);
+	}
+}
